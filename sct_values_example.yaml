@@ -18,7 +18,7 @@ namespaceOverride: ""
 # on all other Kubernetes services.
 ################################################################################
 
-clusterName: "shw-b26b-cluster"
+clusterName: "<cluster_name>"
 
 ################################################################################
 # Splunk Cloud / Splunk Enterprise configuration.
@@ -31,12 +31,12 @@ splunkPlatform:
   # to. e.g. "http://X.X.X.X:8088/services/collector/event". Setting this parameter
   # enables Splunk Platform as a destination. Use the /services/collector/event
   # endpoint for proper extraction of fields.
-  endpoint: "https://http-inputs-kt-dataplatform.splunkcloud.com/services/collector"
+  endpoint: "https://<splunk_enterprise>/services/collector"
   # Required for Splunk Enterprise/Cloud (if `endpoint` is specified). Splunk
   # Alternatively the token can be provided as a secret.
   # Refer to https://github.com/signalfx/splunk-otel-collector-chart/blob/main/docs/advanced-configuration.md#provide-tokens-as-a-secret
   # HTTP Event Collector token.
-  token: "2885F8E5-0E01-47E0-853E-38781D8A6E4A"
+  token: "<hec_token>"
 
   # Name of the Splunk event type index targeted. Required when ingesting logs to Splunk Platform.
   index: "demo"
@@ -131,12 +131,12 @@ splunkObservability:
   # Required for Splunk Observability. Splunk Observability realm to send
   # telemetry data to. Setting this parameter enables Splunk Observability as a
   # destination.
-  realm: "us1"
+  realm: "jp0"
   # Required for Splunk Observability (if `realm` is specified). Splunk
   # Alternatively the accessToken can be provided as a secret.
   # Refer to https://github.com/signalfx/splunk-otel-collector-chart/blob/main/docs/advanced-configuration.md#provide-tokens-as-a-secret
   # Observability org access token.
-  accessToken: "1kaXHUJd8osrA8hZsgEohQ"
+  accessToken: "<access_token>"
 
   # Optional. Splunk Observability ingest URL, default:
   # "https://ingest.<realm>.signalfx.com".
@@ -148,7 +148,7 @@ splunkObservability:
   # Options to disable or enable particular telemetry data types.
   metricsEnabled: true
   tracesEnabled: true
-  logsEnabled: false
+  logsEnabled: true
 
   # Option to send Kubernetes events to Splunk Observability Infrastructure Monitoring as data events:
   # https://docs.splunk.com/Observability/alerts-detectors-notifications/view-data-events.html
@@ -442,10 +442,6 @@ agent:
         endpoint: 10.0.30.115:4317
         tls:
           insecure: true
-      #otlp/2:
-      #endpoint: 10.0.30.115:4318
-      #tls:
-      #insecure: true
     service:
       pipelines:
         metrics:
