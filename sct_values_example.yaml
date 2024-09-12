@@ -439,7 +439,7 @@ agent:
         insecure_skip_verify: true
     exporters:
       otlp:
-        endpoint: 10.0.30.115:4317
+        endpoint: <gateway_ip>:4317
         tls:
           insecure: true
     service:
@@ -614,7 +614,7 @@ clusterReceiver:
   config:
     exporters:
       otlp:
-        endpoint: 10.0.30.115:4317
+        endpoint: <gateway_ip>:4317
         tls:
           insecure: true
     service:
@@ -1319,7 +1319,7 @@ operator:
 # The cert-manager is a CNCF application deployed as a subchart and used for supporting operators that require TLS certificates.
 # Full list of Helm value configurations: https://artifacthub.io/packages/helm/cert-manager/cert-manager?modal=values
 certmanager:
-  enabled: true
+  enabled: false
   installCRDs: true
 
 ################################################################################
