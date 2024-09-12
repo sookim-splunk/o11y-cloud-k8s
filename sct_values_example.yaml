@@ -331,12 +331,12 @@ agent:
   # For example to disable zipkin ports set `agent.ports.zipkin: null`.
   ports:
     otlp:
-      containerPort: 4317
-      hostPort: 4317
+      containerPort: 14317
+      hostPort: 14317
       protocol: TCP
       enabled_for: [traces, metrics, logs, profiling]
     otlp-http:
-      containerPort: 4318
+      containerPort: 14318
       protocol: TCP
       enabled_for: [metrics, traces, logs, profiling]
     otlp-http-old:
