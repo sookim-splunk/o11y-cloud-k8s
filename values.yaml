@@ -1162,7 +1162,7 @@ service:
 ################################################################################
 
 operator:
-  enabled: false
+  enabled: true
   # For more details, refer to: https://github.com/open-telemetry/opentelemetry-operator/blob/main/docs/api.md#instrumentation
   instrumentation:
     # Overrides for default instrumentation configurations can be specified here.
