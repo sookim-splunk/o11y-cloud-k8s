@@ -201,7 +201,7 @@ distribution: ""
 # See: https://docs.splunk.com/observability/apm/set-up-apm/environments.html#setting-the-deployment-environment-span-tag
 ################################################################################
 
-# environment: production
+environment: o11y-workshop-<name>
 
 ################################################################################
 # Optional: Automatic detection of additional metric sources.
@@ -1230,7 +1230,7 @@ operator:
 # The cert-manager is a CNCF application deployed as a subchart and used for supporting operators that require TLS certificates.
 # Full list of Helm value configurations: https://artifacthub.io/packages/helm/cert-manager/cert-manager?modal=values
 certmanager:
-  enabled: false
+  enabled: true
   installCRDs: true
 
 ################################################################################
